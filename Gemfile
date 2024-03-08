@@ -26,6 +26,17 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+
+gem 'devise'
+
+gem 'hirb'
+
+gem 'sassc', '~> 2.4'
+
+gem "sassc-rails"
+
+gem 'devise-bootstrap-views', '~> 1.0'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
