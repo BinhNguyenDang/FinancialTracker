@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version
+3.2.1
 
-Things you may want to cover:
+System dependencies
+Ruby 3.2.1
+Rails 7
+NodeJS 18.14.2
+npm 9.5.0
+yarn 1.22.11
 
-* Ruby version
+Setting credentials
+code in "code --wait" is for VSCode, exchange it with your editor of choice
 
-* System dependencies
+EDITOR="code --wait" rails credentials:edit
+polygon:
+  api_key: "YOUR_KEY"
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Development
+install dependencies bundle install
+install node dependencies npm i
+migrate/prepare the database rails db:migrate
