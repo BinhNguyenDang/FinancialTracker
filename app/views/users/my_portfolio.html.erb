@@ -15,7 +15,13 @@
         </div>
         <div class="card-body">
             <strong>Ticker:</strong> <%= @stock.ticker %><br>
-            <strong>Last Closing Price:</strong> <%= @stock.last_price %>
+            <strong>Last Closing Price:</strong> <%= @stock.last_price %><br>
+            <strong>High Price:</strong> <%= @stock.high_price %><br>
+            <strong>Low Price:</strong> <%= @stock.low_price %><br>
+            <strong>Opening Price:</strong> <%= @stock.opening_price %><br>
+            <strong>Volume:</strong> <%= @stock.volume %><br>
+            <strong>VWAP:</strong> <%= @stock.vwap %>
         </div>
     </div>
+
 <% end %>
