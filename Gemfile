@@ -39,6 +39,8 @@ gem 'devise-bootstrap-views', '~> 1.0'
 
 gem "httparty", "~> 0.21.0"
 
+gem "font-awesome-rails"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 

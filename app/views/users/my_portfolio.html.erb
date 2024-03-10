@@ -1,0 +1,21 @@
+<h1 class="mb-5">Portfolio</h1>
+<h3>Search Stocks</h3>
+<%= form_tag( search_stock_path , method: :get) do |f| %>
+  <div class="input-group input-group-lg">
+    <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control", aria_label: "Text input with segmented dropdown button" %>
+    <%= button_tag type: :submit, class: "btn btn-outline-success" do %>
+      <%= fa_icon 'search ' %>
+    <% end %>
+  </div>
+<% end %>
+<% if @stock %>
+    <div class="card mt-5">
+        <div class="card-header">
+            <strong>Name:</strong> <%= @stock.name %>
+        </div>
+        <div class="card-body">
+            <strong>Ticker:</strong> <%= @stock.ticker %><br>
+            <strong>Last Closing Price:</strong> <%= @stock.last_price %>
+        </div>
+    </div>
+<% end %>
