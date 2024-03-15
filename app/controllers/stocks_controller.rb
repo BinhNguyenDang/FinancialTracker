@@ -8,8 +8,8 @@ class StocksController < ApplicationController
                     f.turbo_stream { render turbo_stream: turbo_stream.replace('results', partial: 'users/result', locals: {stock: @stock})}
                 end
               else
-                flash.now[:alert] = 'Please enter a valid symbol to search'
-                render 'users/my_portfolio', status: :bad_request
+                flash[:alert] = 'Please enter a valid symbol to search'
+                redirect_to my_portfolio_path
               end
         else
             flash[:alert] = "Please enter a symbol to search"

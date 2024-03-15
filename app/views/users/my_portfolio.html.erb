@@ -1,6 +1,6 @@
 <h1 class="mb-5">My Portfolio</h1>
 <h3>Search Stocks</h3>
-<%= form_tag( search_stock_path , method: :get, data: {'turbo-stream': 'stock'}) do |f| %>
+<%= form_tag(search_stock_path, method: :get, data: { 'turbo-stream': 'stock' }) do |f| %>
   <div class="input-group input-group-lg">
     <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control", aria_label: "Text input with segmented dropdown button" %>
     <%= button_tag type: :submit, class: "btn btn-outline-success" do %>
@@ -10,8 +10,11 @@
 <% end %>
 
 <%= render "users/result" %>
+
 <div class="mt-4">
-  <% if !@tracked_stocks.empty? %>
-    <%= render "stocks/list" %>
+  <% if @tracked_stocks != nil %>
+    <% if !@tracked_stocks.empty? %>
+      <%= render "stocks/list" %>
+    <% end %>
   <% end %>
 </div>
