@@ -1,4 +1,9 @@
 class Stock < ApplicationRecord
+    has_many :user_stocks
+    has_many :users, through: :user_stocks
+
+    validates :ticker, :name, presence: true
+
     def self.new_lookup(ticker_symbol)
       begin
         price_data = Polygon.get_closing_price(ticker_symbol)

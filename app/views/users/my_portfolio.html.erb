@@ -9,6 +9,9 @@
   </div>
 <% end %>
 
-  <%= render "users/result" %>
-
-
+<%= render "users/result" %>
+<div class="mt-4">
+  <% if !@tracked_stocks.empty? %>
+    <%= render "stocks/list" %>
+  <% end %>
+</div>
