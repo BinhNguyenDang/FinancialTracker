@@ -12,7 +12,7 @@
 <%= render "users/result" %>
 
 <div class="mt-4">
-  <% if @tracked_stocks != nil %>
+  <% if @tracked_stocks %>
     <% if !@tracked_stocks.empty? %>
       <%= render "stocks/list" %>
     <% end %>

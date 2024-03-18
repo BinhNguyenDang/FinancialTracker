@@ -26,11 +26,12 @@
                 <td><%= stock.opening_price %></td>
                 <td><%= stock.volume %></td>
                 <td><%= stock.vwap %></td>
-                <td><%= 'Action' %></td>
+                <td><%= button_to 'Remove', user_stock_path(stock), method: :delete, data: { "turbo_method": :delete, "turbo_confirm": "Are you sure?" }, class: 'btn btn-sm btn-warning' %></td>
             </tr>
             <% end %>
         </tbody>
         </table>
     </div>
     </div>
+    
 
