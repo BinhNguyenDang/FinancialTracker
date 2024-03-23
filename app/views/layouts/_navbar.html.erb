@@ -21,7 +21,7 @@
                 <%= link_to edit_user_registration_path , class: 'dropdown-item' do %>
                     <%= fa_icon 'edit' %> Edit Profile
                 <% end %>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <%= link_to 'Following', following_path , class: 'dropdown-item' %>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
@@ -40,7 +40,7 @@
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form> %>
         </div>
-        <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger"%>
+        
       <% end %>
       
   </div>
