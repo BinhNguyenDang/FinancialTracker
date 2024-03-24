@@ -1,0 +1,16 @@
+<div id="user">
+  <% if @friend %>
+    <div class="card mt-5">
+      <div class="card-header">
+        <!-- You can add a header if needed -->
+      </div>
+      <div class="card-body">
+        <ul class="list-unstyled">
+          <li><strong>Email:</strong> <%= @friend.email %></li>
+          <li><strong>Firstname:</strong> <%= @friend.first_name %></li>
+          <li><strong>Lastname:</strong> <%= @friend.last_name %></li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,4 +1,18 @@
 <h1> Following </h1>
-<% if !@friends.empty? %>
-    <%=render 'users/list'%>
+<h3>Search Users</h3>
+<%= form_tag(search_users_path, method: :get, data: { 'turbo-stream': 'friend' }) do |f| %>
+  <div class="input-group input-group-lg">
+    <%= text_field_tag :users, params[:users], placeholder: "Enter User to Add", autofocus: true, class: "form-control", aria_label: "Text input with segmented dropdown button" %>
+    <%= button_tag type: :submit, class: "btn btn-outline-success" do %>
+      <%= fa_icon 'search ' %>
+    <% end %>
+  </div>
 <% end %>
+
+<%= render "users/user_result" %>
+
+<div class = "mt-4">
+    <% if !@friends.empty? %>
+        <%=render 'users/list'%>
+    <% end %>
+</div>
