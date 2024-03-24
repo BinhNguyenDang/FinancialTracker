@@ -2,7 +2,7 @@
 <h3>Search Users</h3>
 <%= form_tag(search_users_path, method: :get, data: { 'turbo-stream': 'friend' }) do |f| %>
   <div class="input-group input-group-lg">
-    <%= text_field_tag :users, params[:users], placeholder: "Enter User to Add", autofocus: true, class: "form-control", aria_label: "Text input with segmented dropdown button" %>
+    <%= text_field_tag :users, params[:users], placeholder: "Enter Users", autofocus: true, class: "form-control", aria_label: "Text input with segmented dropdown button" %>
     <%= button_tag type: :submit, class: "btn btn-outline-success" do %>
       <%= fa_icon 'search ' %>
     <% end %>

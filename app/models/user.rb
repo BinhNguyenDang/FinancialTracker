@@ -32,6 +32,16 @@ class User < ApplicationRecord
     "Anonymous"
   end
 
+  def self.search(param)
+    param.strip!  # Elimina espacios alrededor del string de busqueda
+
+    matches = ( 
+      where( "first_name like ?", "%#{param}%" ) +
+      where( "last_name  like ?", "%#{param}%" ) +
+      where( "email      like ?", "%#{param}%" )
+    ).uniq
+  end
+
   def avatar_thumbnail
     avatar.variant(resize_to_limit: [150, 150]).processed
   end

@@ -1,16 +1,26 @@
 <div id="user">
   <% if @friend %>
-    <div class="card mt-5">
-      <div class="card-header">
-        <!-- You can add a header if needed -->
+    <% if !@friend.empty? %>
+      <% @friend.each do |friend| %>
+        <div class="card mt-3">
+          <div class="card-header">
+            <!-- You can add a header if needed -->
+          </div>
+            <div class="card-body">
+              <ul class="list-unstyled">
+                  <li><strong>Email:</strong> <%= friend.email %></li>
+                  <li><strong>Firstname:</strong> <%= friend.first_name %></li>
+                  <li><strong>Lastname:</strong> <%= friend.last_name %></li>
+              </ul> 
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else%>
+      <div class="alert alert-danger alert-dismissible fade show " role="alert">
+        No users found for the given term.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
-      <div class="card-body">
-        <ul class="list-unstyled">
-          <li><strong>Email:</strong> <%= @friend.email %></li>
-          <li><strong>Firstname:</strong> <%= @friend.first_name %></li>
-          <li><strong>Lastname:</strong> <%= @friend.last_name %></li>
-        </ul>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

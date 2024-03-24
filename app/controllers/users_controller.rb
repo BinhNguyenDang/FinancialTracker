@@ -10,13 +10,13 @@ class UsersController < ApplicationController
   def search
     term = params[:users]
     if term.present?
-      @friend = User.where(email: term).or(User.where(first_name: term)).first
+      @friend = User.search(term)
       if @friend
         respond_to do |format|
-          format.turbo_stream { render turbo_stream: turbo_stream.replace('user', partial: 'users/user_result', locals: { friend: @friend }) }
+          format.turbo_stream { render turbo_stream: turbo_stream.update('user', partial: 'users/user_result', locals: { friend: @friend }) }
         end
       else
-        flash[:alert] = 'No users found for the given term (First Initial Capital)'
+        flash[:alert] = 'No users found for the given term'
         redirect_to following_path
       end
     else
