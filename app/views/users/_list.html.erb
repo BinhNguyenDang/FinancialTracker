@@ -17,6 +17,7 @@
               <td>
                 <%= button_to 'Unfollow?', friendship_path(friend), method: :delete, data: { "turbo_method": :delete, "turbo_confirm": "Are you sure?"  },
                                             class: 'btn btn-sm btn-primary' %>
+                <%= link_to "View Profile", friend_path(friend), class: "btn btn-sm btn-success"%>
               </td>
             </tr>
           <% end %>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get '/friend/show/:id(.:format)', to: 'friend#show', as: 'friend'
   resources :user_stocks, only: [:create, :destroy]
   resources :friendships, only: [:create, :destroy]
+  # get 'users/:id', to: 'users#detail'
   
   devise_for :users, controllers: {
     sessions: 'users/sessions',

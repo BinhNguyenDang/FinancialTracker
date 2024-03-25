@@ -12,7 +12,7 @@
               <li><strong>Firstname:</strong> <%= friend.first_name %></li>
               <li><strong>Lastname:</strong> <%= friend.last_name %></li>
               <li>
-                <%= link_to "View Profile", "#", class: "btn btn-sm btn-success"%>
+                <%= button_to "View Profile", friend_path(friend), class: "btn btn-sm btn-success"%>
                 <% if current_user.not_followed?(friend.id) %>
                   <%= button_to "Follow?", friendships_path(friend: friend), class: "btn btn-sm btn-success ml-2", method: :post %>
                 <% else %>

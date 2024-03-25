@@ -1,0 +1,33 @@
+<h2>Followee Profile</h2>
+<%= image_tag(@user.avatar_thumbnail) %>
+<div class="card mt-3">
+  <div class="card-header">
+    <!-- You can add a header if needed -->
+  </div>
+  <div class="card-body">
+    <ul class="list-unstyled">
+      <li><strong>Email:</strong> <%= @user.email %></li>
+      <li><strong>Firstname:</strong> <%= @user.first_name %></li>
+      <li><strong>Lastname:</strong> <%= @user.last_name %></li>
+      <li>
+        <% if current_user.not_followed?(@user.id) %>
+          <%= button_to "Follow?", friendships_path(friend: @user), class: "btn btn-sm btn-success ml-2", method: :post %>
+        <% else %>
+          <span class="badge text-bg-primary">Followed</span>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="mt-4">
+  <% if @tracked_stocks %>
+    <% if !@tracked_stocks.empty? %>
+      <%= render "stocks/list" %>
+    <% else %>
+        <div class="alert alert-info">
+        <h4 class="alert-heading">No stocks tracked</h4>
+        </div>
+    <% end %>
+  <% end %>
+</div>
