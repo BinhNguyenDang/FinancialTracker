@@ -19,36 +19,44 @@ To get started with this project, follow these steps:
 - Ensure Ruby Version 3.0.2 is Installed:
 
 Make sure you have Ruby version 3.0.2 installed on your system. You can check your Ruby version by running:
-
-ruby --version 
+```
+ruby --version
+```
 - Clone the Repository:
 
 Clone this repository to your local machine using Git:
-
-git clone <repository_url> 
+```
+git clone 
+```
 -	Install Gem Dependencies:
 
 Install gem dependencies by running:
-
-bundle install 
+```
+bundle install
+```
 -	Setup Credentials:
 
 Before you can use external APIs or services, such as the Polygon API, you need to set up your credentials. Replace "code --wait" with your preferred text editor command. Run the following command to edit your credentials file:
-
-EDITOR="code --wait" rails credentials:edit 
+```
+EDITOR="code --wait" rails credentials:edit
+```
 Add your Polygon API key under the appropriate section, like so:
-
-polygon: api_key: "YOUR_API_KEY" 
+```
+polygon:
+  api_key: "YOUR_API_KEY"
+```
 - Setup the Database:
 
 Run the following command to setup the database:
-
-rails db:migrate 
+```
+rails db:migrate
+```
 - Start the Rails Server:
 
 Start the Rails server by running:
-
-rails s 
+```
+rails s
+```
 
 ---------------------------------------------------------------------
 Usage
