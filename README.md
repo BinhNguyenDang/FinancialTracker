@@ -3,6 +3,7 @@ Project Name: FinancialTracker - Track Your Finances
 Overview
 -------------------------------------------
 - This project aims to integrate the Polygon API into a Ruby on Rails application. The Polygon API provides real-time and historical market data for stocks, cryptocurrencies, and forex. By integrating this API into your Rails application, you can access a wealth of financial data to power various features within your application.
+- https://polygon.io/
 
 ---------------------------------------
 
