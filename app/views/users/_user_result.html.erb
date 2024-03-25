@@ -1,26 +1,33 @@
 <div id="user">
-  <% if @friend %>
-    <% if !@friend.empty? %>
-      <% @friend.each do |friend| %>
+  <% if @friend.present? %>
+    <% @friend.each do |friend| %>
+      <% if friend.email != current_user.email %>
         <div class="card mt-3">
           <div class="card-header">
             <!-- You can add a header if needed -->
           </div>
-            <div class="card-body">
-              <ul class="list-unstyled">
-                  <li><strong>Email:</strong> <%= friend.email %></li>
-                  <li><strong>Firstname:</strong> <%= friend.first_name %></li>
-                  <li><strong>Lastname:</strong> <%= friend.last_name %></li>
-              </ul> 
-            </div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+              <li><strong>Email:</strong> <%= friend.email %></li>
+              <li><strong>Firstname:</strong> <%= friend.first_name %></li>
+              <li><strong>Lastname:</strong> <%= friend.last_name %></li>
+              <li>
+                <%= link_to "View Profile", "#", class: "btn btn-sm btn-success"%>
+                <% if current_user.not_followed?(friend.id) %>
+                  <%= button_to "Follow?", friendships_path(friend: friend), class: "btn btn-sm btn-success ml-2", method: :post %>
+                <% else %>
+                  <span class="badge text-bg-primary">Followed</span>
+                <% end %>
+              </li>
+            </ul>
           </div>
         </div>
       <% end %>
-    <% else%>
-      <div class="alert alert-danger alert-dismissible fade show " role="alert">
-        No users found for the given term.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
     <% end %>
+  <% else %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      No users found for the given term.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
   <% end %>
 </div>

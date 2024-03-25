@@ -42,6 +42,11 @@ class User < ApplicationRecord
     ).uniq
   end
 
+  def not_followed?(id)
+    !self.friends.where(id: id).exists?
+  end
+
+
   def avatar_thumbnail
     avatar.variant(resize_to_limit: [150, 150]).processed
   end
