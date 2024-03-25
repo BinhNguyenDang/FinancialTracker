@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/friend/show/:id(.:format)', to: 'friend#show', as: 'friend'
+  patch '/update_stock/:id', to: 'stocks#update', as: 'update_stock'
   resources :user_stocks, only: [:create, :destroy]
   resources :friendships, only: [:create, :destroy]
   # get 'users/:id', to: 'users#detail'
