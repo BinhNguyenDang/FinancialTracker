@@ -166,6 +166,8 @@ Start the Rails server by running:
 ```
 rails s
 ```
+Preview of database structure, find info in: http://localhost:3000/erd/index.html
+
 
 ---------------------------------------------------------------------
 Usage
